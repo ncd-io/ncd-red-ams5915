@@ -1,0 +1,30 @@
+{
+    "name": "ncd-red-ams5915",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ncd-io/ncd-red-ams5915"
+    },
+    "keywords": [
+        "AMS5915",
+        "ncd",
+        "pressure-sensor",
+        "i2c"
+    ],
+    "author": "Trey Felton",
+    "license": "MIT",
+    "node-red": {
+        "nodes": {
+            "ncd-ams5915": "ams5915.js"
+        }
+    },
+    "dependencies": {
+        "ncd-red-comm": "^1.4.0",
+        "promise-queue": "^2.2.5"
+    }
+}
