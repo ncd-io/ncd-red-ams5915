@@ -23,12 +23,12 @@ module.exports = class AMS5915{
 		var min = 0,
 			max = this.config.range;
 		if(this.config.sType.toLowerCase() == "d-b") min -= max;
-		else if(this.config.sType.toLowerCase() == "d") min = 700;
+		else if(this.config.sType.toLowerCase() == "b") min = 700;
 
-		var pCounts = ((status[0] & 0x3F) << 8) | status[1];
-		var tCounts = (status[2] << 3) | ((status[3] & 0xE0) >> 5);
+		var pCounts = ((status[0] & 63) << 8) | status[1];
+		var tCounts = (status[2] << 3) | (status[3] >> 5);
 		//mbar
-		this.status.pressure = ((pCounts - 1638) / (13107 / (max-min)) + min);
+		this.status.pressure = ((pCounts - 1638) / (13107 / (max-min)) + min) * this.config.pScale;
 		//celsius
 		this.status.temperature = ((tCounts * 200) / 2048) -50;
 

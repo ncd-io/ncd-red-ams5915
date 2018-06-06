@@ -18,8 +18,9 @@
         inputs:1,
         outputs:2,
 		icon: "serial.png",
+		paletteLabel: "AMS5915",
         label: function() {
-            return this.name || "ADS5915";
+            return this.name || "AMS5915";
         },
 		outputLabels: function(i){
 			return i == 0 ? 'Pressure' : 'Temperature';

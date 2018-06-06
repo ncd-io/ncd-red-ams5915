@@ -1,6 +1,6 @@
 {
     "name": "ncd-red-ams5915",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -24,7 +24,7 @@
         }
     },
     "dependencies": {
-        "ncd-red-comm": "^1.4.0",
+        "ncd-red-comm": "^1.5.1",
         "promise-queue": "^2.2.5"
     }
 }

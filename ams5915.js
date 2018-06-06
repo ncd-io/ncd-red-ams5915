@@ -38,7 +38,6 @@ module.exports = function(RED){
 		}
 
 		function send_payload(_status){
-			_status.pressure *= config.pScale;
 			var msg = [
 				{topic: 'pressure', payload: _status.pressure},
 				{topic: 'temperature', payload: _status.temperature},
@@ -63,6 +62,7 @@ module.exports = function(RED){
 				});
 			}else{
 				sensor_pool[node.id].timeout = setTimeout(() => {
+					node.sensor.init();
 					if(typeof sensor_pool[node.id] != 'undefined') get_status(true);
 				}, 3000);
 			}
